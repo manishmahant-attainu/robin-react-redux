@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Todos from '../Todos';
-import Posts from '../Posts';
-import TodoHistory from '../TodoHistory';
-import Layout from '../Layout';
+import Todos from '../containers/Todos';
+import Posts from '../containers/Posts';
+import TodoHistory from '../containers/TodoHistory';
+import Layout from '../containers/Layout';
 
 const Routes = () => {
     return (

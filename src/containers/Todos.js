@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './App.css';
-import { CREATE_TODO } from './store/reducer';
-import TodoList from './TodoList';
-class App extends React.Component {
+import '../App.css';
+import TodoList from '../components/TodoList';
+import { CREATE_TODO } from '../actions';
+
+class Todo extends React.Component {
   state = {
     title: ''
   }
@@ -48,16 +49,36 @@ class App extends React.Component {
 //   }
 // }
 
+const createTodoFunction = (title) => {
+  return {type:CREATE_TODO, payload:title}
+}
+
 //param2
 const mapDispatchToProps = (dispatch) => {
   return {
-    createTodo : (title) => dispatch({type:CREATE_TODO, payload:title}),
+    createTodo : (title) => dispatch(createTodoFunction(title)),
   }
 }
 
-export default connect(null,mapDispatchToProps)(App);
+export default connect(null,mapDispatchToProps)(Todo);
 
-// function abc (param1, param2) {
+// {
+//   key:value,
+//   key2:value2,
+//   createTodo: function(title) {
+//     return dispatch({
+//       type:CREATE_TODO, payload:title
+//     })
+//   }
+// }
+
+// function abc(para1, para2) {
+
+// }
+
+// abc('value')
+
+// function connect (state, dispatch) {
 
 //   return function (Component) {
 //     <Component {...param1} {...param2} />

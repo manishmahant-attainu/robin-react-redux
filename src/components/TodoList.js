@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { DELETE_TODO } from './store/reducer';
+import { DELETE_TODO } from '../actions';
+
 const TodoList = (props) => {
     const { todos, dispatch } = props;
 
@@ -29,7 +30,7 @@ const TodoList = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-      todos : state,
+      todos : state.todos,
     }
 }
 

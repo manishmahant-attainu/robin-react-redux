@@ -1,12 +1,10 @@
+import { CREATE_TODO, DELETE_TODO, UPDATE_TODO } from "../actions";
+
 const STATUS = {
     PENDING: 0,
     DONE: 1,
     DELETED: 2,
 };
-
-export const CREATE_TODO = 'CREATE_TODO';
-export const UPDATE_TODO = 'UPDATE_TODO';
-export const DELETE_TODO = 'DELETE_TODO';
 
 const todoModel = {
     id: Date(),
@@ -17,7 +15,7 @@ const todoModel = {
 
 const initialState = [];
 
-const reducer = function(state,action) {
+const todoReducer = function(state,action) {
     state = state || initialState;
 
     switch (action.type) {
@@ -37,4 +35,4 @@ const reducer = function(state,action) {
     }
 }
 
-export default reducer;
+export default todoReducer;
