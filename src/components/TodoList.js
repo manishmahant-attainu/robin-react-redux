@@ -1,15 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { DELETE_TODO } from '../actions';
+import { todoAction } from '../actions';
 
 const TodoList = (props) => {
     const { todos, dispatch } = props;
 
     const deleteTodo = (id) => {
-        dispatch({
-            type:DELETE_TODO,
-            payload:id
-        })
+        dispatch(todoAction.delete(id))
     }
     return (
         <div>

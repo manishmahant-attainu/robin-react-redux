@@ -1,13 +1,6 @@
-import { POST_LIST } from "../actions";
+import { POST_LIST } from "../actionTypes";
 
 const postInitialState = {};
-
-const postModel = {
-    id: Date(),
-    title:'',
-    body:'',
-    author:''
-};
 
 const postReducer = function(state,action) {
     state = state || postInitialState;

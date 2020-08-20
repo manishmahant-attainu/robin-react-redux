@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react';
-import axios from 'axios';
 import PostList from '../components/PostList';
 import { connect } from 'react-redux';
 import { isEmpty } from 'lodash';
-import { POST_LIST } from '../actions';
+import { postAction } from '../actions';
 
 class Posts extends React.Component {
 
@@ -14,13 +13,7 @@ class Posts extends React.Component {
     fetchPosts = () => {
         console.log('fetchPosts===>',this.props.posts);
         if(isEmpty(this.props.posts)) {
-            axios({
-                method:'GET',
-                url:'https://jsonplaceholder.typicode.com/posts'
-            })
-            .then(resp=>{
-                this.props.postList(resp.data);
-            })
+            this.props.postList();
         }
     }
 
@@ -46,7 +39,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        postList: (posts) => dispatch({type: POST_LIST, payload:posts})
+        postList: () => dispatch(postAction.fetchList())
     }
 }
 

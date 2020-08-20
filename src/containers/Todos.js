@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import '../App.css';
 import TodoList from '../components/TodoList';
-import { CREATE_TODO } from '../actions';
+import { todoAction } from '../actions';
 
 class Todo extends React.Component {
   state = {
@@ -49,14 +49,25 @@ class Todo extends React.Component {
 //   }
 // }
 
-const createTodoFunction = (title) => {
-  return {type:CREATE_TODO, payload:title}
-}
+// const createTodoFunction = (title) => {
+//   console.log(title)
+//   return function(dispatch) {
+//     console.log(dispatch)
+//   }
+//   // return {type:CREATE_TODO, payload:title}
+// }
+
+// const createTodoFunction = (title) => dispatch => {
+//   console.log(title)
+//   console.log(dispatch)
+//   // return {type:CREATE_TODO, payload:title}
+// }
 
 //param2
 const mapDispatchToProps = (dispatch) => {
   return {
-    createTodo : (title) => dispatch(createTodoFunction(title)),
+    // createTodo : (title) => dispatch(createTodoFunction(title)),
+    createTodo : (title) => dispatch(todoAction.create(title)),
   }
 }
 
@@ -81,7 +92,7 @@ export default connect(null,mapDispatchToProps)(Todo);
 // function connect (state, dispatch) {
 
 //   return function (Component) {
-//     <Component {...param1} {...param2} />
+//     <Component {...state} {...dispatch} />
 //   }
 // }
 // abc(param1,param2)(Component)

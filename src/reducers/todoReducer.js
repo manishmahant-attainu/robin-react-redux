@@ -1,4 +1,4 @@
-import { CREATE_TODO, DELETE_TODO, UPDATE_TODO } from "../actions";
+import { CREATE_TODO, DELETE_TODO, UPDATE_TODO } from "../actionTypes";
 
 const STATUS = {
     PENDING: 0,
