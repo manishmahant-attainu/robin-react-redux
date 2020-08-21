@@ -70,8 +70,10 @@ const mapDispatchToProps = (dispatch) => {
     createTodo : (title) => dispatch(todoAction.create(title)),
   }
 }
+const initRedux = connect(null,mapDispatchToProps);
+const TodoWrapped = initRedux(Todo);
 
-export default connect(null,mapDispatchToProps)(Todo);
+export default TodoWrapped;
 
 // {
 //   key:value,
@@ -95,4 +97,4 @@ export default connect(null,mapDispatchToProps)(Todo);
 //     <Component {...state} {...dispatch} />
 //   }
 // }
-// abc(param1,param2)(Component)
+// connect(param1,param2)(Component)
