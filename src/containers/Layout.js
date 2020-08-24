@@ -10,6 +10,7 @@ const Layout = (props) => {
                 <Link className={pathname==='/'?'active':''} to="/">Todo</Link>
                 <Link className={pathname==='/todo-history'?'active':''} to="/todo-history">Todo History</Link>
                 <Link className={pathname==='/posts'?'active':''} to="/posts">Posts</Link>
+                <Link className={pathname==='/videos'?'active':''} to="/videos">Videos</Link>
                 <GoogleAuth />
             </div>
             <div style={{paddingLeft:'16px'}}>

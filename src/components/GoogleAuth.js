@@ -10,13 +10,12 @@ class GoogleAuth extends React.Component {
       window.gapi.client
         .init({
           clientId: googleKeys.client_id,
-          // scope: 'email profile openid https://www.googleapis.com/auth/youtube',
-          scope: 'email profile openid',
+          scope: 'email profile openid https://www.googleapis.com/auth/youtube',
         })
         .then(() => {
             this.auth = window.gapi.auth2.getAuthInstance();
             // console.dir(this.auth.currentUser.get())
-            // this.onAuthChange(this.auth.isSignedIn.get());
+            this.onAuthChange(this.auth.isSignedIn.get());
             this.auth.isSignedIn.listen(this.onAuthChange);
         });
     });
